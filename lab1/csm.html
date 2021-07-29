@@ -1,0 +1,113 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>今天吃什么</title>
+
+    <style>
+        /* 页面css样式 */
+        .wrapper {
+            width: 400px;
+            margin: 10px auto;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .box li {
+            vertical-align: top;
+            display: inline-block;
+            width: 105px;
+            height: 50px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 25px;
+            margin: 5px;
+        }
+        
+        .wrapper button {
+            border: none;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+            font-weight: bolder;
+            color: #333;
+            background-color: rgb(14, 146, 43);
+        }
+
+        .wrapper button {
+            display: inline-block;
+        }
+
+        body {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+    	<h1 align="center">Eat What</h2>
+        <img src="EATWHAT.png" width="200px" height="auto" align="center"><br />
+        <h6 id="data" align="right"></h6>
+        <ul class="box"></ul>
+        <button class="start">开始</button>
+        <button class="stop">停止</button>
+    </div>
+</body>
+
+<script>
+    //定义全局变量方便引用
+    var boxUl = document.getElementsByClassName('box')[0];
+    var start = document.getElementsByClassName('start')[0];
+    var stop = document.getElementsByClassName('stop')[0]
+    var oLi = document.getElementsByTagName('li');
+
+    //数据准备
+    var nameString = new String("<a href=\"https://mp.weixin.qq.com/s/pz1EyT2gs7T1Zg-VtmooYQ\" target=\"_blank\">千寻烤肉</a>,<a href=\"https://mp.weixin.qq.com/s/wnkINR8ojeTBN97MDDG2Zg\" target=\"_blank\">后旗羊莊</a>,<a href=\"https://mp.weixin.qq.com/s/B085y21wtfORq7MYlmLmTA\" target=\"_blank\">唐家牛杂馆 · 地锅鸡</a>,<a href=\"https://mp.weixin.qq.com/s/0JEKM8eCMEigcasXQeOy-g\" target=\"_blank\">胡子酸菜鱼</a>,<a href=\"https://mp.weixin.qq.com/s/CZCauSeECVqYW61Qg5bd8Q\" target=\"_blank\">水浒烤肉</a>,<a href=\"https://mp.weixin.qq.com/s/cq_7M4OAM9Pl1OMij9qI2w\" target=\"_blank\">牛牛厨艺烧烤吧</a>,<a href=\"https://mp.weixin.qq.com/s/iV0P_EGTaMzjXGTOGYcBqw\" target=\"_blank\">三笑口酒店</a>,<a href=\"https://mp.weixin.qq.com/s/79q7y4dTaHfVIE6F-N5csA\" target=\"_blank\">云海肴</a>,<a href=\"https://mp.weixin.qq.com/s/19VGZuUCRfbSOz8FpfvaSw\" target=\"_blank\">老火大骨头汤</a>,<a href=\"https://mp.weixin.qq.com/s/DUrDbTwP8uGigfVryd3i6Q\" target=\"_blank\">香港喜狮港式打边炉</a>,<a href=\"https://mp.weixin.qq.com/s/SW18U5JImJtRBFNzJtx09Q\" target=\"_blank\">隐创</a>,<a href=\"https://mp.weixin.qq.com/s/0j4CjaENp2PDe7BWkTjF1w\" target=\"_blank\">一绪に和牛寿喜烧</a>,<a href=\"https://mp.weixin.qq.com/s/CqUNXTWx67Br5D-ffGMtEg\" target=\"_blank\">延旭烧烤</a>,<a href=\"https://mp.weixin.qq.com/s/ZS2L3KC6yi74GvyBnbMgFg\" target=\"_blank\">费比欧比萨餐厅</a>,<a href=\"https://mp.weixin.qq.com/s/PHT4OIuTfyUVWbP7V_6eRA\" target=\"_blank\">黄蜀郎鸡公煲</a>,<a href=\"https://mp.weixin.qq.com/s/RhPuW0jPcCyxrVsad66MHQ\" target=\"_blank\">卜凡家</a>,<a href=\"https://mp.weixin.qq.com/s/Uysqoo2gkUj4THRKomh4sg\" target=\"_blank\">小猪查理川式烤肉</a>,<a href=\"https://mp.weixin.qq.com/s/u-zlJw5F_vI9fl9sG0_T9Q\" target=\"_blank\">小荷姑娘传统文化餐厅</a>,<a href=\"https://mp.weixin.qq.com/s/0sA5bNJzEfOgwlLa7FW1tw\" target=\"_blank\">煲王粤菜餐厅</a>,<a href=\"https://mp.weixin.qq.com/s/fyKyXD8HKFh_3KiD0DXp1w\" target=\"_blank\">漫滋烧肉居酒屋</a>,<a href=\"https://mp.weixin.qq.com/s/6HfgD30Bu9G8DHd2QB95ww\" target=\"_blank\">名人浅草屋</a>,<a href=\"https://mp.weixin.qq.com/s/qkXyD-ybm8FognbvvMDZRQ\" target=\"_blank\">庐州太太</a>,<a href=\"https://mp.weixin.qq.com/s/biTTLiSUz4Y_ZegbmwrUKQ\" target=\"_blank\">茉莉餐厅</a>,<a href=\"https://mp.weixin.qq.com/s/NGcOZAVOfldpLrpM5-TFWw\" target=\"_blank\">东北王食府</a>,<a href=\"https://mp.weixin.qq.com/s/YfzBmLgU8H35lf_kgUc3WA\" target=\"_blank\">川人川菜馆</a>,<a href=\"https://mp.weixin.qq.com/s/bojbAdfLF1mYlDX_5emd3w\" target=\"_blank\">匠人牛品烧肉</a>,<a href=\"https://mp.weixin.qq.com/s/IPIhsD7C__T0c0sI3SuyiQ\" target=\"_blank\">西湖小月</a>,<a href=\"https://mp.weixin.qq.com/s/w7i9MLMg0ns7ShVhuyT89w\" target=\"_blank\">百鹭里火锅料理</a>,<a href=\"https://mp.weixin.qq.com/s/O1wJXT7w_VSC6iBtlJyNtQ\" target=\"_blank\">北平食府</a>,<a href=\"https://mp.weixin.qq.com/s/yGvktUqTs_JklPHrQK5_yQ\" target=\"_blank\">龙凤餐室</a>,<a href=\"https://mp.weixin.qq.com/s/QzgzQziK_LCzrKSlPHZboA\" target=\"_blank\">瑞辣</a>,<a href=\"https://mp.weixin.qq.com/s/gpicKzSXXglRV7ARBxbrfA\" target=\"_blank\">缪记得蚨香</a>,<a href=\"https://mp.weixin.qq.com/s/brLUfTQhnxAOb_KGH3Ixfw\" target=\"_blank\">民族大团结</a>");
+    var nameArr = nameString.split(",");
+
+    //获取每个学生姓名添加到标签中，自动解析html标签
+    var str = "";
+    for (let i = 0; i < nameArr.length; i++) {
+        str += "<li >" + nameArr[i] + "</li>"
+    }
+    boxUl.innerHTML = str;
+
+    //添加开始按钮的点击事件
+    var timer = null;
+    start.onclick = function () {
+        // 设置定时器
+        timer = setInterval(function () {
+
+            // 根据数组长度范围生成随机数
+            var i = Math.floor(Math.random() * nameArr.length);
+            // 先通过for循环清空所有style属性
+            for (var j = 0; j < oLi.length; j++) {
+                oLi[j].removeAttribute("style");
+            }
+            // 为随机选择的li颜色属性
+            oLi[i].style.background = "red";
+        }, 150);
+    };
+    // 点击停止
+    stop.onclick = function () {
+        // 清空定时器停止点名
+        clearInterval(timer);
+    }
+    //页面初始化时间设置
+    window.onload = function () {
+        datatime();
+    }
+    //页面时间动态刷新
+    setInterval(datatime, 1000);
+
+    function datatime() {
+        let data = new Date();
+        let dataString ="现在是北京时间：" + data.toLocaleString();
+        document.getElementById("data").innerHTML = dataString;
+    }
+</script>
