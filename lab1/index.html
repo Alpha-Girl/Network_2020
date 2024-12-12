@@ -1,202 +1,233 @@
 <!DOCTYPE html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>-->
-<html>
-<link rel="shortcut icon" href="new.ico">
-<style>
-    #header {
-        background-color: #ffc107;
-        color: white;
-        text-align: center;
-        padding: 5px;
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yi-Xiang Hu's Homepage</title>
+    <link rel="shortcut icon" href="new.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
 
-    #nav {
-        line-height: 30px;
-        background-color: #eeeeee;
-        width: 100px;
-        float: left;
-        padding: 5px;
-    }
+        /* Header */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    #section {
-        float: left;
-        width: max-content;
-        padding: 10px;
-    }
+        /* Navigation */
+        nav {
+            margin: 0 auto;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
 
-    #footer {
-        background-color: #ffc107;
-        color: white;
-        clear: both;
-        text-align: center;
-        padding: 5px;
-    }
-</style>
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em;
+            border-radius: 4px;
+        }
 
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            max-width: 150px;
+            padding: 1em;
+            background-color: #f0f4f8;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Main Content */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .section {
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Collapsible Sections */
+        details {
+            margin: 15px 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
 <body>
-    <audio src="xiaoge.mp3" autoplay="autoplay"></audio>
-    <div id="header">
-        <h1 align="center">Yi-Xiang Hu(胡毅翔)'s homepage </h1>
-        <div class="center" align="center">
-            <font size="4px"><b class="menu"><a href="#">Home</a> | <a href="https://github.com/Alpha-Girl"
-                        target="_blank">Github</a> | <a href="https://live.bilibili.com/13252046"
-                        target="_blank">Bilibili</a> |
-                    <a href="https://www.linkedin.com/in/hyx1999/" target="_blank">LinkedIn</a> | <a
-                        href="https://wakatime.com/@HuYixiang" target="_blank">WakaTime</a> |
-                    <a href="lyb.html" target="_blank">Message Board</a>
-                    <!--| <a href="csm.html" target="_blank">Eat
-                        What</a>-->
-                </b></font>
+
+    <!-- Header -->
+    <header>
+        <h1>Yi-Xiang Hu's Homepage</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="https://github.com/Alpha-Girl" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+            <a href="https://live.bilibili.com/13252046" target="_blank"><i class="fa fa-bilibili"></i> Bilibili</a>
+            <a href="https://www.linkedin.com/in/hyx1999/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            <a href="https://wakatime.com/@HuYixiang" target="_blank"><i class="fa fa-clock-o"></i> WakaTime</a>
+            <a href="lyb.html" target="_blank">Message Board</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <img src="5002.jpg" width="100%" height="auto" alt="Profile Image">
+            <p>Pageviews since 2020</p>
+            <script src="//rf.revolvermaps.com/0/0/8.js?i=5x2ogw7e5ct&m=0&c=ff0000&cr1=ffffff&f=arial&l=33" async="async"></script>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="section">
+            <p><strong>Email:</strong> <a href="mailto:yixianghu@mail.ustc.edu.cn">yixianghu@mail.ustc.edu.cn</a></p>
+            <p><strong>Major:</strong> Computer Science and Technology</p>
+            <p><strong>Supervisor:</strong> <a href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a></p>
+            <p><strong>Research Interests:</strong> Solver, Data Center Network</p>
+
+            <details>
+                <summary><strong>Biography</strong></summary>
+                <p>PhD Candidate, School of Computer Science and Technology, University of Science and Technology of China, Aug. 2024–</p>
+                <p>Master Candidate, School of Computer Science and Technology, University of Science and Technology of China, Aug. 2022–Jul. 2024</p>
+                <p>Undergraduate, School of the Gifted Young, University of Science and Technology of China, Aug. 2018–Jul. 2022</p>
+            </details>
+
+
+            <details>
+                <summary><strong>Publications</strong></summary>
+                <ul>
+                    <li><p><b>[AAAI'25]</b> FFCG: Effective and Fast Family Column Generation for Solving Large-Scale Linear Programs</p>
+                    <p><u>Yi-Xiang Hu</u>, Feng Wu, Shaoang Li, Yifang Zhao, Xiang-Yang Li</p>
+                <p>In <i>The 39th Annual AAAI Conference on Artificial Intelligence</i>, 2025.</p></li>
+                </ul>
+            </details>
+            <details>
+                <summary><strong>Honors</strong></summary>
+                <ul>
+                    <li>Sep. 2024, 博士生学业奖学金一等奖</li>
+                    <li>May. 2024, 2023-2024学年校优秀共青团员</li>
+                    <li>May. 2024, 2023-2024学年校优秀共青团干部</li>
+                    <li>Sep. 2023, 2023年中国科学技术大学暑期文化科技卫生“三下乡”社会实践“优秀个人”</li>
+                    <li>Sep. 2023, 硕士生学业奖学金一等奖</li>
+                    <li>Jun. 2023, 中科大第二届博弈AI大赛亚军</li>
+                    <li>May. 2023, 2022-2023学年校优秀共青团员</li>
+                    <li>Dec. 2022, 研究生学术论坛优秀组织奖</li>
+                    <li>Dec. 2022, 2022-2023学年第一学期计算机科学与技术学院“研究生会优秀干部”</li>
+                    <li>Sep. 2022, 硕士生学业奖学金一等奖</li>
+                    <li>Jun. 2022, 计算机科学与技术学院优秀毕业论文</li>
+                    <li>Jun. 2022, 2022年“基础学科英才班”学生学术交流会学术报告一等奖</li>
+                    <li>May. 2022, 第一届华夏计算机科技英才班学术交流会一等奖</li>
+                    <li>May. 2022, 中国科大-德清阿尔法创新研究院优秀学员（德清第三期）</li>
+                    <li>Mar. 2022, 2022年中国科学技术大学优秀毕业生</li>
+                    <li>Jan. 2022, 2021年中国科大本科招生新媒体宣传工作杰出表现奖</li>
+                    <li>Jan. 2022, 八七级少年班零零班创新奖学金( SGY Class of 87 Innovation Scholarship )</li>
+                    <li>Nov. 2021, 中国科大-德清阿尔法创新研究院月度之星（2021年10月）</li>
+                    <li>Oct. 2021, 第21届ROBOGAME机器人大赛一等奖</li>
+                    <li>Oct. 2021, 优秀学生奖学金铜奖 (Excellent Student Scholarship – Bronze)</li>
+                    <li>Jun. 2021, 中国科学技术大学学生党史知识网络竞赛金奖</li>
+                    <li>May. 2021, 冠军杯季军</li>
+                    <li>May. 2021, 全国大学生人工智能知识竞赛二等奖</li>
+                    <li>Apr. 2021, 2021 Interdisciplinary Contest In Modeling Successful Participant</li>
+                    <li>Apr. 2021, 优秀共青团员</li>
+                    <li>Dec. 2020, 学而思培优勤勉奖学金</li>
+                    <li>Dec. 2020, 第十二届全国大学生数学竞赛安徽赛区非数学专业组二等奖</li>
+                    <li>Oct. 2020, 奋进奖学金 (Endeavor Scholarship)</li>
+                    <li>May. 2020, 优秀共青团员</li>
+                    <li>Dec. 2019, 优秀学生奖学金铜奖 (Excellent Student Scholarship – Bronze)</li>
+                    <li>Dec. 2019, 第十一届全国大学生数学竞赛安徽赛区非数学专业
+
+组三等奖</li>
+                    <li>May. 2019, 校优秀班级干部</li>
+                    <li>May. 2019, 优秀共青团员</li>
+                    <li>Dec. 2018, 优秀学生奖学金金奖 (Excellent Student Scholarship – Gold)</li>
+                    <li>Nov. 2018, 雏鹰杯季军</li>
+                    <li>Oct. 2018, 天使杯亚军</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary><strong>Patents</strong></summary>
+                <p>李强, <u>胡毅翔</u>, 李向阳. 一种工业设备固件的备份系统及方法. CN114860508A, 2022-08-05. <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=SCPD&dbname=SCPD202203&filename=CN114860508A&uniplatform=NZKPT&v=WO9hfiyIraN-ISBZSD8HLPs2KLZUUVbr8BOZZJ66591iYxEc-W3e6r6i1Xf07LLI" target="_blank">Link</a></p>
+            </details>
+
+            <details>
+                <summary><strong>Experiences</strong></summary>
+                <ul>
+                    <li>Sep. 2024–Jan. 2025, Teaching Assistant, “Foundations of Algorithms”</li>
+                    <li>May 2024–present, Intern at Software Project Management Department, NIO Technology</li>
+                    <li>Feb. 2024–Jul. 2024, Teaching Assistant, “Applied Mathematics for Computer Science”</li>
+                    <li>Sep. 2023–Jan. 2024, Teaching Assistant, “Foundations of Algorithms”</li>
+                    <li>May 2023–Jan. 2024, Office Follow-Up, Graduate Student Union, USTC</li>
+                    <li>May 2023–May 2024, Member, 12th Committee, Graduate Student Union, USTC</li>
+                    <li>Apr. 2023–Apr. 2024, Head of Academic Department, Graduate Student Union, School of Computer Science and Technology, USTC</li>
+                    <li>Sep. 2022–Apr. 2023, Core Member, Office of Graduate Student Union, School of Computer Science and Technology, USTC</li>
+                    <li>Feb. 2022–Jul. 2022, Assistant Class Supervisor, School of the Gifted Young, USTC</li>
+                    <li>Aug. 2021–May. 2022, Intern, Algorithm Division, Alpha Innovation Research Institute</li>
+                    <li>May 2021–present, Core Member, New Media Center, Admissions Office, USTC</li>
+                    <li>Mar. 2021–Jul. 2021, Teaching Assistant, “Operating System”</li>
+                    <li>Jan. 2021–present, Administrator of uSTC饮食文化调研小组 WeChat Public Account</li>
+                    <li>Oct. 2020–Jul. 2022, Class Leader, Class of 2018, Computer Science, School of the Gifted Young</li>
+                    <li>Aug. 2020–Jul. 2022, Member of 华夏计算机科技英才班</li>
+                    <li>Sep. 2018–Jul. 2022, Academic Committee Member, Class 001, School of the Gifted Young</li>
+                </ul>
+            </details>
         </div>
-    </div>
+    </main>
 
-    <div id="nav">
-        <img src="5002.jpg" width="90px" height="auto" align="center"><br />
-        <hr>
-        <p align="center"><IMG SRC="/cgi-bin/Count.cgi?df=alphaboy.dat" ft=5></p>
-        <p align="center">2020.9.22~</p>
-
-    </div>
-
-    <div id="section">
-        <p>
-            <strong>&nbsp &nbsp&nbsp &nbsp Email:</strong> <a
-                href="mailto:yixianghu@mail.ustc.edu.cn">yixianghu@mail.ustc.edu.cn</a><br /><br />
-            <strong>&nbsp &nbsp&nbsp &nbsp Major:</strong> Computer Science and Technology<br /><br />
-            <strong>&nbsp &nbsp&nbsp &nbsp Supervisor:</strong> <a href="http://staff.ustc.edu.cn/~xiangyangli/"
-                target="_blank">Xiang-Yang Li</a><br />
-        </p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Research Interests:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp
-            &nbsp
-            Solver, Data Center Network</p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Biography:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            PhD Candidate, <a href="https://cs.ustc.edu.cn/" target="_blank">School
-                of Computer Science and Technology</a>, <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
-                Technology of
-                China</a>,
-            Aug. 2024-<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Master Candidate, <a href="https://cs.ustc.edu.cn/" target="_blank">School
-                of Computer Science and Technology</a>, <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
-                Technology of
-                China</a>,
-            Aug. 2022-Jul. 2024<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Undergraduate, <a href="https://sgy.ustc.edu.cn/" target="_blank">School
-                of the Gifted Young</a>, <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
-                Technology of
-                China</a>,
-            Aug. 2018-Jul. 2022</p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Honors:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Sep. 2024,
-            博士生学业奖学金一等奖
-            <br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            May. 2024,
-            2023-2024学年校优秀共青团员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            May. 2023,
-            2023-2024学年校优秀共青团干部
-            <br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Sep. 2023,
-            2023年中国科学技术大学暑期文化科技卫生“三下乡”社会实践“优秀个人”<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Sep. 2023,
-            硕士生学业奖学金一等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Jun. 2023,
-            中科大第二届博弈AI大赛亚军<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            May. 2023,
-            2022-2023学年校优秀共青团员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Dec. 2022,
-            研究生学术论坛优秀组织奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Dec. 2022,
-            2022-2023学年第一学期计算机科学与技术学院“研究生会优秀干部”<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Sep. 2022,
-            硕士生学业奖学金一等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Jun. 2022,
-            计算机科学与技术学院优秀毕业论文<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Jun. 2022,
-            2022年“基础学科英才班”学生学术交流会学术报告一等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            May. 2022,
-            第一届华夏计算机科技英才班学术交流会一等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            May. 2022,
-            中国科大-德清阿尔法创新研究院优秀学员（德清第三期）<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Mar. 2022,
-            2022年中国科学技术大学优秀毕业生<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Jan. 2022,
-            2021年中国科大本科招生新媒体宣传工作杰出表现奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Jan. 2022,
-            八七级少年班零零班创新奖学金( SGY Class of 87 Innovation Scholarship )<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            Nov. 2021,
-            中国科大-德清阿尔法创新研究院月度之星（2021年10月）<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Oct. 2021,
-            第21届ROBOGAME机器人大赛一等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Oct. 2021,
-            优秀学生奖学金铜奖( Excellent Student Scholarship – Bronze )<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Jun.
-            2021,
-            中国科学技术大学学生党史知识网络竞赛金奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May. 2021,
-            冠军杯季军<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May. 2021,
-            全国大学生人工智能知识竞赛二等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Apr. 2021,
-            2021 Interdisciplinary Contest In Modeling Successful Participant<br />&nbsp &nbsp&nbsp &nbsp &nbsp
-            &nbsp&nbsp &nbsp Apr. 2021,
-            优秀共青团员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Dec. 2020,
-            学而思培优勤勉奖学金<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Dec. 2020,
-            第十二届全国大学生数学竞赛安徽赛区非数学专业组二等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Oct. 2020,
-            奋进奖学金( Endeavor Scholarship )<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May. 2020,
-            优秀共青团员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Dec. 2019,
-            优秀学生奖学金铜奖( Excellent Student Scholarship – Bronze )<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Dec.
-            2019,
-            第十一届全国大学生数学竞赛安徽赛区非数学专业组三等奖<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May. 2019,
-            校优秀班级干部<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May. 2019,
-            优秀共青团员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Dec. 2018,
-            优秀学生奖学金金奖( Excellent Student Scholarship – Gold )<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Nov.
-            2018,
-            雏鹰杯季军<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Oct. 2018, 天使杯亚军</p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Patents:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-            李强, <u>胡毅翔</u>, 李向阳. 一种工业设备固件的备份系统及方法. CN114860508A, 2022-08-05.[<a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=SCPD&dbname=SCPD202203&filename=CN114860508A&uniplatform=NZKPT&v=WO9hfiyIraN-ISBZSD8HLPs2KLZUUVbr8BOZZJ66591iYxEc-W3e6r6i1Xf07LLI" target="_blank">Link</a>]
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Experinces:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May.
-            2024-, 蔚来汽车科技（安徽）有限公司 软件项目管理部 实习生<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May.
-            2023-Jan. 2024, 中国科大研究生会办公室跟进<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May.
-            2023-May. 2024, 中国科大研究生会第十二届委员会委员<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Apr.
-            2023-Apr. 2024, 中国科大计算机科学与技术学院研究生会学术部部长<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Sep.
-            2022-Apr. 2023, 中国科大计算机科学与技术学院研究生会办公室骨干<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Feb.
-            2022-Jul. 2022, 2021-2022学年度春季学期中国科学技术大学少年班学院助理班主任<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Aug.
-            2021-May. 2022, 中国科大-德清阿尔法创新研究院 科技成果转化工程部 算法实习生<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp May.
-            2021-, 中国科大招生办公室新媒体中心微信组骨干<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Mar.
-            2021-Jul. 2021, “操作系统原理与设计”助教<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Jan.
-            2021-,
-            公众号“uSTC饮食文化调研小组”管理员,运营者<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Oct.
-            2020-Jul. 2022,
-            少年班学院2018级计算机专业班长<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Aug.
-            2020-Jul. 2022,
-            华夏计算机科技英才班<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Sep. 2018-Jul. 2022,
-            少年班学院2018级001班学习委员</p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp <A href="http://genealogy.math.ndsu.nodak.edu/html/id.phtml?id=69626">Academic
-                    Ancestors</A>:</strong><br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp<a
-                href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a>(ACM Fellow, IEEE
-            Fellow)--><a href="http://en.wikipedia.org/w/index.php?title=Shang-Hua_Teng">Shang-Hua
-                Teng</a> (ACM Fellow, Godel Prize, Fulkerson Prize)--> <a
-                href="http://en.wikipedia.org/wiki/Gary_Miller_(computer_scientist)">Gary Miller</a>
-            (ACM Fellow, Knuth Prize, Paris Kanellakis Award)<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp--> <A
-                href="http://en.wikipedia.org/wiki/Manuel_Blum">
-                Manuel Blum </a> (<b>Turing Award</b>, 1995; three students
-            won Turing Award) -->
-            <a href="http://en.wikipedia.org/wiki/Marvin_Minsky">Marvin
-                Minsky</a> (<b>Turing Award</b>, 1969; two students won
-            Turing Award) <br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp--> Albert W. Tucker (known for
-            Karush–Kuhn–Tucker conditions) --> Solomon Lefschetz
-            (National Medal of Science, Fellow of the Royal Society)<br />&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp
-            &nbsp-->
-            William Edward Story --> &nbsp; ... ,&nbsp; -->
-            Poisson --> Lagrange --> Euler --> Bernoulli, .....
-        </p>
-        <p><strong>&nbsp &nbsp&nbsp &nbsp Pageviews:</strong></p>
-        <p align="center">
-            <script type="text/javascript"
-                src="//rf.revolvermaps.com/0/0/8.js?i=5x2ogw7e5ct&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
-                async="async"></script>
-        </p>
-    </div>
-
-    <div id="footer">
-        <div>Designed By <a href="mailto:alphaboy@mail.ustc.edu.cn">Yixiang Hu</a> &copy; 2020 | School of Gifted
-            Young @ USTC</div>
-    </div>
-
+    <!-- Footer -->
+    <footer>
+        <p>Designed By <a class="footer-link" href="mailto:alphaboy@mail.ustc.edu.cn">Yixiang Hu</a> &copy; 2020 | School of Gifted Young @ USTC</p>
+    </footer>
 </body>
-
 </html>
+```
