@@ -7,93 +7,200 @@
     <link rel="shortcut icon" href="new.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     <style>
+        :root {
+            --accent: #0b66c3;
+            --accent-dark: #083f7a;
+            --ink: #1f2937;
+            --muted: #5f6b7a;
+            --line: #d9e2ec;
+            --paper: #ffffff;
+            --page: #eef3f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f4f4f9;
+            color: var(--ink);
+            background-color: var(--page);
+            line-height: 1.65;
         }
 
         /* Header */
         header {
-            background-color: #007bff;
+            background-color: var(--accent);
             color: white;
-            padding: 1em;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 8px 24px rgba(8, 63, 122, 0.18);
+        }
+
+        .header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 24px 22px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: clamp(1.6rem, 3vw, 2.45rem);
+            font-weight: 750;
+            letter-spacing: 0;
+            margin: 0 0 18px;
         }
 
         /* Navigation */
         nav {
             margin: 0 auto;
-            max-width: 900px;
+            max-width: 980px;
             display: flex;
             justify-content: center;
-            gap: 1em;
+            gap: 0.5rem;
             flex-wrap: wrap;
         }
 
         nav a {
             color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
             text-decoration: none;
-            padding: 0.5em;
-            border-radius: 4px;
+            padding: 0.45rem 0.7rem;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
         nav a:hover {
-            background-color: #0056b3;
-        }
-
-        /* Sidebar */
-        #sidebar {
-            max-width: 150px;
-            padding: 1em;
-            background-color: #f0f4f8;
-            border-radius: 10px;
-            text-align: center;
-            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.16);
+            transform: translateY(-1px);
         }
 
         /* Main Content */
         main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
         }
 
         .section {
-            max-width: 1000px;
-            background-color: #ffffff;
-            padding: 20px;
+            background-color: var(--paper);
+            padding: 36px;
+            border: 1px solid rgba(141, 158, 178, 0.28);
+            border-radius: 12px;
+            box-shadow: 0 18px 45px rgba(31, 41, 55, 0.12);
+        }
+
+        .profile-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 270px;
+            gap: 34px;
+            align-items: start;
+            padding-bottom: 30px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .profile-copy h2 {
+            color: #102a43;
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            line-height: 1.15;
+            margin: 0 0 8px;
+        }
+
+        .profile-copy h2 span {
+            color: var(--muted);
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        .profile-tagline {
+            color: var(--muted);
+            margin: 0 0 24px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 11px;
+            margin: 0;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 5.2em minmax(0, 1fr);
+            gap: 12px;
+            margin: 0;
+        }
+
+        .info-row dt {
+            color: #102a43;
+            font-weight: 700;
+        }
+
+        .info-row dd {
+            margin: 0;
+            min-width: 0;
+        }
+
+        .profile-photo {
+            justify-self: end;
+            width: min(200px, 100%);
+            margin: 0;
+            padding: 12px;
+            background: #f8fbff;
+            border: 1px solid var(--line);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 14px 34px rgba(8, 63, 122, 0.14);
         }
 
-        h1, h2 {
-            color: #007bff;
+        .profile-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2825 / 4031;
+            object-fit: cover;
+            border-radius: 6px;
         }
 
-        .center {
-            text-align: center;
+        .section-title {
+            color: var(--accent-dark);
+            font-size: 1.25rem;
+            line-height: 1.3;
+            margin: 28px 0 12px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent);
         }
 
-        /* Collapsible Sections */
-        details {
-            margin: 15px 0;
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        ul {
+            padding-left: 1.35rem;
+        }
+
+        li {
+            margin-bottom: 0.85rem;
+        }
+
+        li p {
+            margin: 0.35rem 0;
         }
 
         /* Footer */
         footer {
-            background-color: #007bff;
+            background-color: var(--accent-dark);
             color: white;
             padding: 1em;
             text-align: center;
@@ -103,57 +210,112 @@
             color: white;
             text-decoration: none;
         }
+
+        @media (max-width: 760px) {
+            .header-inner {
+                padding: 22px 18px 18px;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            main {
+                padding: 22px 14px 36px;
+            }
+
+            .section {
+                padding: 22px;
+                border-radius: 10px;
+            }
+
+            .profile-intro {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .profile-photo {
+                justify-self: start;
+                max-width: 220px;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Yi-Xiang Hu's Homepage</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="https://github.com/Alpha-Girl" target="_blank"><i class="fa fa-github"></i> GitHub</a>
-            <a href="https://scholar.google.cz/citations?user=nXSDRsEAAAAJ" target="_blank"><i class="fa fa-google"></i> Google Scholar</a>
-            <a href="https://live.bilibili.com/13252046" target="_blank"><i class="fa fa-bilibili"></i> Bilibili</a>
-            <a href="https://www.linkedin.com/in/yi-xiang-hu-45120a354/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
-            <a href="https://wakatime.com/@HuYixiang" target="_blank"><i class="fa fa-clock-o"></i> WakaTime</a>
-            <a href="lyb.html" target="_blank">Message Board</a>
-        </nav>
+        <div class="header-inner">
+            <h1>Yi-Xiang Hu's Homepage</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="https://github.com/Alpha-Girl" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                <a href="https://scholar.google.cz/citations?user=nXSDRsEAAAAJ" target="_blank"><i class="fa fa-google"></i> Google Scholar</a>
+                <a href="https://live.bilibili.com/13252046" target="_blank"><i class="fa fa-bilibili"></i> Bilibili</a>
+                <a href="https://www.linkedin.com/in/yi-xiang-hu-45120a354/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                <a href="https://wakatime.com/@HuYixiang" target="_blank"><i class="fa fa-clock-o"></i> WakaTime</a>
+                <a href="lyb.html" target="_blank">Message Board</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <!-- Sidebar -->
-        <aside id="sidebar">
-            <img src="5002.jpg" width="100%" height="auto" alt="Profile Image">
-            <!-- <p>Pageviews since 2020</p>
-            <script src="//rf.revolvermaps.com/0/0/8.js?i=5x2ogw7e5ct&m=0&c=ff0000&cr1=ffffff&f=arial&l=33" async="async"></script> -->
-        </aside>
-
         <!-- Main Content -->
-        <div class="section">
+        <section class="section">
             <!-- <p><strong>Email:</strong> <a href="mailto:yixianghu@mail.ustc.edu.cn">yixianghu@mail.ustc.edu.cn</a></p>
             <p><strong>Major:</strong> Computer Science and Technology</p>
             <p><strong>Supervisor:</strong> <a href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a></p>
             <p><strong>Research Interests:</strong> Solver, Data Center Network</p>
             <p><strong>Office:</strong> B805, Information and Artificial Intelligence Building, High-Tech Campus, USTC,
                 100 Fuxing Road, Hefei, Anhui, 230000, China. </p> -->
-<p><strong>邮箱:</strong> <a href="mailto:yixianghu@mail.ustc.edu.cn">yixianghu@mail.ustc.edu.cn</a></p>
-            <p><strong>专业:</strong> 计算机应用技术</p>
-            <p><strong>导师:</strong> <a href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a></p>
-            <p><strong>研究方向:</strong> 求解器, 运筹优化, 数据中心网络</p>
-            <p><strong>办公室:</strong> 安徽省合肥市蜀山区复兴路100号中国科学技术大学高新校区信智大楼B805</p>
+            <div class="profile-intro">
+                <div class="profile-copy">
+                    <h2>胡毅翔 <span>Yi-Xiang Hu</span></h2>
+                    <p class="profile-tagline">中国科学技术大学计算机科学与技术学院博士研究生</p>
+                    <dl class="info-list">
+                        <div class="info-row">
+                            <dt>邮箱</dt>
+                            <dd><a href="mailto:yixianghu@mail.ustc.edu.cn">yixianghu@mail.ustc.edu.cn</a></dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>专业</dt>
+                            <dd>计算机应用技术</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>导师</dt>
+                            <dd><a href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a></dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>研究方向</dt>
+                            <dd>求解器, 运筹优化, 数据中心网络</dd>
+                        </div>
+                        <div class="info-row">
+                            <dt>办公室</dt>
+                            <dd>安徽省合肥市蜀山区复兴路100号中国科学技术大学高新校区信智大楼B805</dd>
+                        </div>
+                    </dl>
+                </div>
+                <figure class="profile-photo">
+                    <img src="5002.jpg" alt="Yi-Xiang Hu">
+                </figure>
+            </div>
             <!-- <details> -->
                 <!-- <summary><strong>教育经历:</strong></summary>
                 <p>PhD Candidate, School of Computer Science and Technology, University of Science and Technology of China, Aug. 2022–</p>
                 <p>Undergraduate, School of the Gifted Young, University of Science and Technology of China, Aug. 2018–Jul. 2022</p> -->
             <!-- </details> -->
-<summary><strong>教育经历:</strong></summary>
+            <h2 class="section-title">教育经历</h2>
                 <p>Aug. 2022–, 中国科学技术大学, 计算机科学与技术学院, 在读博士生（计算机应用技术专业） </p>
                 <!-- <p>Master Candidate, School of Computer Science and Technology, University of Science and Technology of China, Aug. 2022–Jul. 2024</p> -->
                 <p>Aug. 2018–Jul. 2022, 中国科学技术大学, 少年班学院, 工学学士（计算机科学与技术专业）</p>
 
             <!-- <details> -->
-                <summary><strong>论文:</strong></summary>
+                <h2 class="section-title">论文</h2>
                 <ul>
                     <li><p><b>[AAAI'25]</b> FFCG: Effective and Fast Family Column Generation for Solving Large-Scale Linear Program <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33222" target="_blank">Link</a></p>
                     <p><u>Yi-Xiang Hu</u>, Feng Wu, Shaoang Li, Yifang Zhao, Xiang-Yang Li</p>
@@ -218,15 +380,15 @@
 
             <!-- <details> -->
                 <!-- <summary><strong>Services:</strong></summary> -->
-                <summary><strong>学术服务:</strong></summary>
+                <h2 class="section-title">学术服务</h2>
                 <ul>
-                    Reviewer of NIPS 2025/2026, IJCNN 2025/2026, ICONIP 2025    
+                    <li>Reviewer of NIPS 2025/2026, IJCNN 2025/2026, ICONIP 2025</li>
                 </ul>
                 
             <!-- </details> -->
             <!-- <details> -->
                 <!-- <summary><strong>Honors</strong></summary> -->
-                <summary><strong>荣誉:</strong></summary>
+                <h2 class="section-title">荣誉</h2>
                 <ul>
                     <li>May. 2026, IJCNN 2026 Travel Grant</li>
                     <li>Sep. 2025, 博士生学业奖学金一等奖</li>
@@ -262,9 +424,7 @@
                     <li>Oct. 2020, 奋进奖学金 (Endeavor Scholarship)</li>
                     <li>May. 2020, 优秀共青团员</li>
                     <li>Dec. 2019, 优秀学生奖学金铜奖 (Excellent Student Scholarship – Bronze)</li>
-                    <li>Dec. 2019, 第十一届全国大学生数学竞赛安徽赛区非数学专业
-
-组三等奖</li>
+                    <li>Dec. 2019, 第十一届全国大学生数学竞赛安徽赛区非数学专业组三等奖</li>
                     <li>May. 2019, 校优秀班级干部</li>
                     <li>May. 2019, 优秀共青团员</li>
                     <li>Dec. 2018, 优秀学生奖学金金奖 (Excellent Student Scholarship – Gold)</li>
@@ -275,8 +435,8 @@
 
             <!-- <details> -->
                 <!-- <summary><strong>Patents</strong></summary> -->
-                <summary><strong>专利:</strong></summary>
-                <p>李强, <u>胡毅翔</u>, 李向阳. 一种工业设备固件的备份系统及方法. CN114860508A, 2022-08-05. <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=SCPD&dbname=SCPD202203&filename=CN114860508A&uniplatform=NZKPT&v=WO9hfiyIraN-ISBZSD8HLPs2KLZUUVbr8BOZZJ66591iYxEc-W3e6r6i1Xf07LLI" target="_blank">Link</a></p>
+                <h2 class="section-title">专利</h2>
+                <p>李强, <u>胡毅翔</u>, 李向阳. 一种工业设备固件的备份系统及方法. CN114860508A, 2022-08-05. <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=SCPD&amp;dbname=SCPD202203&amp;filename=CN114860508A&amp;uniplatform=NZKPT&amp;v=WO9hfiyIraN-ISBZSD8HLPs2KLZUUVbr8BOZZJ66591iYxEc-W3e6r6i1Xf07LLI" target="_blank">Link</a></p>
                 <p>李向阳, 周欣, 曾舒立, 黄亮, 吴锋, 余刚刚, 杨广涛, 季炜, <u>胡毅翔</u>, 章斯佳. 一种软件交付团队运营管理系统及方法. CN121766928A, 2026-03-31. </p>
                 <p>李向阳, 吴锋, 王宇柯, <u>胡毅翔</u>. 资源受限的数据作业平台的智能调度方法及系统. CN121560482A, 2026-02-24. </p>
 
@@ -284,7 +444,7 @@
 
             <!-- <details> -->
                 <!-- <summary><strong>Experiences</strong></summary> -->
-                <summary><strong>实习/学工/其他经历:</strong></summary>
+                <h2 class="section-title">实习/学工/其他经历</h2>
                 <ul>
                     <!-- <li>Jun. 2025-Nov. 2025, Intern at Cloud Platform Operations Department, Information Technology Company (Data Center), CHN Energy</li>
                     <li>Sep. 2024–Jan. 2025, Teaching Assistant, “Foundations of Algorithms”</li>
@@ -323,7 +483,7 @@
 <li>Sep. 2018-Jul. 2022, 少年班学院2018级001班学习委员</li>
                 </ul>
             <!-- </details> -->
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -332,4 +492,3 @@
     </footer>
 </body>
 </html>
-```
